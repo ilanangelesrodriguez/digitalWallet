@@ -1,17 +1,29 @@
 SubProceso inicioSesion
-	Escribir "Introduce tu direccion:" Sin Saltar
+	Escribir "Introduce tu direccion:" sin saltar 
 	leer account
 	Escribir "Introduce tu clave:" Sin Saltar
 	leer password
 FinSubProceso
+SubProceso wait
+	esperar 2 Segundos
+	borrar pantalla
+FinSubProceso
 SubProceso menu
-	escribir "Enviar" "  " Sin Saltar
-	escribir "Recibir" "  " Sin Saltar
-	escribir "Canjear"
+	escribir "1.Enviar" "   " Sin Saltar
+	escribir "2.Recibir" "   " Sin Saltar
+	escribir "3.Canjear"
+	actividad
+	escribir "Seleccionar:" Sin Saltar
+	leer opc
+	segun opc hacer
+		1: Escribir "Enviar"
+		2: Escribir "Recibir"
+		3: Escribir "Canjear"	
+	FinSegun
 FinSubProceso
 SubProceso actividad
-	escribir "No ves tu token"
-	Escribir "Actualizar lista"
+	escribir "No ves tu token" "   " Sin Saltar
+	Escribir "Actualizar lista" "   " Sin Saltar
 	Escribir "Agregar activo"
 FinSubProceso
 SubProceso footer
@@ -23,23 +35,16 @@ SubProceso cerrarSesion
 FinSubProceso
 Algoritmo billeteraDigital
 	//Bilitera digital para el token EPISIcoin
-	Escribir "Bienvenido a la EPISIwallet"
+	Escribir "-----------------------------------"
+	Escribir "|=== Red principal de Ethereum ===|"
+	Escribir "-----------------------------------"
+	Escribir "=== Bienvenido a la EPISIwallet ==="
+	Escribir "-----------------------------------"
 	inicioSesion
-	esperar 3 Segundos
-	borrar pantalla
-	Escribir "iniciando sesion"
-	esperar 2 Segundos
-	Borrar Pantalla
-	Escribir "EPISIwallet"
-	Escribir "Account"
-	Escribir account
-	Escribir coin Sin Saltar
-	Escribir "EPISIcoin"
+	wait
+	Escribir "Iniciando Sesion.............."
+	wait
 	menu
-	Escribir "|" "  Activos  " "|" "  Actividad  " "|"
-	actividad
-	esperar 2 Segundos
-	Borrar Pantalla
+	wait
 	cerrarSesion
-	
 FinAlgoritmo
