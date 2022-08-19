@@ -81,6 +81,16 @@ SubProceso comprar(id Por Referencia, episicoin Por Referencia, monto Por Refere
 	leer compra
 	escribir "S/." compra " == " compra/100 " EPISIcoins"
 	escribir " "
+	escribir "Confirmar:"
+	escribir "1. Si"
+	escribir "2. No"
+	leer z
+	si z=1 Entonces
+		Escribir "Compra exitosa"
+	SiNo
+		enviar(id, episicoin, monto)
+	FinSi
+	wait
 	menu(id, episicoin, monto, ns, compra)
 FinSubProceso
 SubProceso outro(id Por Referencia)
