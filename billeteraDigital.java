@@ -130,7 +130,7 @@ public class billeteraDigital {
                         throw new AssertionError();
                 }
 		   //menu
-   menu(id, episicoin, monto, ns, compra)*/
+  /* menu(id, episicoin, monto, ns, compra)*/
                 break;    
             default:
                 System.out.println("Selecciona la opcion correcta");;
